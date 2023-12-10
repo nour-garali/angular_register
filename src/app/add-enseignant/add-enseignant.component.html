@@ -1,0 +1,68 @@
+<div class="container">
+    <div>
+    <h2>Ajouter un Enseignant :</h2>
+    </div>
+    <form >
+        <div hidden class="col-sm-2 col-md-2 col-lg-2">
+        <label >ID Enseignant</label>
+        <input type="text" [(ngModel)]="newEnseignant.idEnseignant"
+        name="idEnseignant" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4" >
+        <label >Nom Enseignant</label>
+        <input type="text"[(ngModel)]= "newEnseignant.nomEnseignant"
+        name="nomEnseignant" class="form-control">
+        </div>
+
+        <div class="col-sm-4 col-md-4 col-lg-4" >
+            <label >ville Enseignant</label>
+            <input type="text"[(ngModel)]= "newEnseignant.villeEnseignant"
+            name="villeEnseignant" class="form-control">
+            </div>
+    
+
+
+       
+        <div class="col-sm-4 col-md-4 col-lg-4">
+        <label >Date naissance</label>
+        <input type="date" [(ngModel)]= "newEnseignant.dateNaissance"
+        name="dateNaissance" class="form-control">
+        </div>
+
+        <!-- <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>salaire</label>
+            <input type="number" [(ngModel)]="newEnseignant.salaire" name="salaire" class="form-control">
+        </div> -->
+
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>University</label>
+            <select class="form-control form-control-lg" id="idUniversity" name="idUniversity" [(ngModel)]="newIdUniv">
+                <option *ngFor="let u of universities" [value]="u.idUniversity">
+                    {{u.nomUiversity}}
+                </option>
+            </select>
+        </div> 
+
+
+        <div class="col-sm-16 col-md-16 col-lg-16">
+            <label class="mb-2">Image :</label>
+            <input type="file" (change)="onImageUpload($event)"
+            name="logo" class="form-control">
+            </div>
+
+            <div class="col-sm-16 col-md-16 col-lg-16">
+                <img [src]="imagePath" class="card-img-top img-fluid rounded-start"
+                style="width: 500px; height: 300px" />
+                </div>
+                
+
+            
+    
+
+            
+        <div class="mt-2">
+        <button type="submit" (click)="addEnseignant()"class="btn btn-success">Ajouter</button>
+        </div>
+        </form>
+        </div>
+        

@@ -1,0 +1,39 @@
+<div class="container">
+    <form class="form-inline">
+      <div class="form-group mx-sm-3 mb-2 mt-2">
+        <label>Nom Enseignant</label>
+        <input type="text" class="form-control" [(ngModel)]="nomEnseignant" name="nomEnseignant">
+        <button type="submit" (click)="rechercherEns()" class="btn btn-primary mb-2 ml-2">Rechercher</button>
+      </div>
+    </form>
+  
+    <div class="card shadow mb-4">
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Nom</th>
+              <th>Ville</th>
+              <th>Date de naissance</th>
+              <th>University</th>
+              <!-- <th>Salaire</th> -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let enseignant of enseignants">
+              <td>{{ enseignant.idEnseignant }}</td>
+              <td>{{ enseignant.nomEnseignant }}</td>
+              <td>{{ enseignant.villeEnseignant }}</td>
+              <td>{{ enseignant.dateNaissance | date:'dd/MM/yyyy' }}</td>
+              <td>{{ enseignant.university.nomUiversity }}</td>
+              <!-- <td>{{ enseignant.salaire }}</td> -->
+              <!-- <td><button class="btn btn-danger" (click)="supprimerEnseignant(enseignant)">Supprimer</button></td> -->
+              <!-- <td><a class="btn btn-success" [routerLink]="['/updateEnseignant', enseignant.idEnseignant]">Modifier</a></td> -->
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

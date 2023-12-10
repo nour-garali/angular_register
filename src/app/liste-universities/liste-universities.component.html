@@ -1,0 +1,27 @@
+<div class="container">
+    <app-update-university [university]="updatedUniv"
+    (universityUpdated)= "universityUpdated($event)" 
+    [ajout]="ajout">
+
+    
+    ></app-update-university>
+    
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <table class="table table-striped">
+    <thead>
+    <tr> <th>Id</th><th>Nom Université</th> </tr>
+    </thead>
+    <tbody *ngFor="let u of universities">
+    <tr>
+    <td>{{u.idUniversity}}</td>
+    <td>{{u.nomUiversity}}</td>
+    <td><a class="btn btn-success" (click)="updateUniv(u)">Editer</a></td>
+
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+

@@ -1,0 +1,18 @@
+<form>
+    <div [hidden]="ajout" >
+
+    <label [hidden] >ID university</label>
+    <input  type="text" [readonly]="university.idUniversity" name="idUniversity" class="form-control w-25">
+    </div>
+    <div>
+    <label>Nom university</label>
+    <input type="text" [(ngModel)]="university.nomUiversity" name="nomUiversity" class="form-control"
+    placeholder="Entrez un nom de université...">
+    </div>
+    <div class="mt-2">
+        <button type="submit" [disabled]="!university.nomUiversity" class="btn btn-success"
+        (click)="saveUniversity()" >{{ajout ? 'Ajouter' : 'Modifier'}}
+        </button>
+    </div>
+    </form>
+    

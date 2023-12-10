@@ -1,0 +1,49 @@
+<div class="container mt-5">
+    <div class="row justify-content-md-center">
+      <div class="col-md-4">
+        <div class="alert alert-danger" *ngIf="err=== 1">
+          <strong> Password and Confirm Password must be the same! </strong>
+        </div>
+  
+        <!-- <div
+          class="card bg-dark"
+          style="width: 25rem; position: relative; margin-top: 230px">
+          <div class="card-body text-white">
+            <h3 class="card-title text-center py-3">Sign In</h3> -->
+            <form>
+              <div class="form-group">
+                <label>Username :</label>
+                <input
+                  type="text"
+                  name="username"
+                  class="form-control py-2"
+                  [(ngModel)]="user.username"
+                  placeholder="Enter Username"
+                />
+              </div>
+  
+              <div class="form-group">
+                <label>Password :</label>
+                <input
+                  type="password"
+                  name="password"
+                  [(ngModel)]="user.password"
+                  class="form-control py-2"
+                 
+                />
+              </div>
+  
+              <div class="row justify-content-md-center py-3">
+                <button type="button" (click)="onLoggedin()" class="btn btn-info">
+                  Sign In
+                </button>
+              </div>
+            </form>
+  
+            <p class="m-2">Vous n'avez pas de compte pour vous connecter ? <a routerLink="/register" class="text-decoration-none text-primary font-weight-bold">Créer un compte</a>
+            </p>      
+            
+        </div>
+      </div>
+    </div>
+  

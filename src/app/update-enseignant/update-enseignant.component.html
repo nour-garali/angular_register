@@ -1,0 +1,50 @@
+<div class="container">
+    <div>
+        <h2>Modifier un enseignant :</h2>
+    </div>
+    <form>
+        <div hidden class="col-sm-2 col-md-2 col-lg-2">
+            <label>ID enseignant</label>
+            <input type="text" [(ngModel)]="currentEnseignant.idEnseignant" name="idEnseignant" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Nom enseignant</label>
+            <input type="text" [(ngModel)]="currentEnseignant.nomEnseignant" name="nomEnseignant" class="form-control">
+        </div>
+
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>ville enseignant</label>
+            <input type="text" [(ngModel)]="currentEnseignant.villeEnseignant" name="villeEnseignant" class="form-control">
+        </div>
+
+
+        <!-- <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>salaire</label>
+            <input type="number" [(ngModel)]="currentEnseignant.salaire" name="salaire" class="form-control">
+        </div> -->
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Date de naissance</label>
+            <input type="date" [ngModel]="currentEnseignant.dateNaissance| date: 'yyyy-MM-dd'" 
+            (ngModelChange)=" currentEnseignant.dateNaissance= $event" name="dateNaissance"  class="form-control">
+        </div>
+
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>University</label>
+            <select class="form-control form-control-lg" id="idUniversity" name="idUniversity" [(ngModel)]="updatedUnivId">
+                <option *ngFor="let u of universities" [value]="u.idUniversity">
+                    {{u.nomUiversity}}
+                </option>  
+            </select>
+        </div> 
+
+        <div class="col-sm-16 col-md-16 col-lg-16">
+            <label class="mb-2">Image :</label>
+            <input type="file" (change)="onImageUpload($event)" class="form-control">
+            </div>
+
+        
+        <div class="mt-2">
+            <button type="submit" (click)="updateEnseignant()" class="btn btn-success">Modifer</button>
+        </div>
+    </form>
+</div>
